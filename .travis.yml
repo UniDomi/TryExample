@@ -3,22 +3,22 @@ language: java
 jdk:
 - oraclejdk8
 before_install:
-  - chmod +x mvnw
+- chmod +x mvnw
 services:
 - postgresql
 addons:
   postgresql: '9.6'
 cache:
   directories:
-  - $HOME/.m2
+  - "$HOME/.m2"
 before_script:
-- psql -c 'create user "ese2017-full-integration" password '"'"'ese2017-full-integration'"'"' createdb;' -U postgres
-- psql -c 'create database "ese2017-full-integration"' -U ese2017-full-integration postgres
+- psql -c 'create user "ese2017-full-integration" password '"'"'ese2017-full-integration'"'"'
+  createdb;' -U postgres
+- psql -c 'create database "ese2017-full-integration"' -U ese2017-full-integration
+  postgres
 deploy:
   provider: heroku
-  api-key:
-    secure: $HEROKU_API_KEY
-  app: ese2017-full-integration
-notifications:
-  slack:
-    secure: AzQ19CrX7sF+YtlD0hiRVxvb3b2l1zXnptk7L6QJV+eK/+0/wmzamGhSIkNu7+WrXQzKlE2yA/VpJ/WUwaHJDKwm9SnOv86EB6mR1Emo6qgv3sZU43vUeDrPZ5lz8Byc5RnKc/VAg448WZNs6i4hqBFQ7a8FX0ETpHtx/Bqg8037D523cpS5SqE95hq1ZqM5H8mlU0RKCi/y4c6ei4x++Jsix8O5HlyskPP56CVxprllDt16FOBX5qrzbDZH9motqvX1FldRQuPxejhZydxtAgTfgKRoxdmKG+8M1LrW5+A0LLifXz5Yb3rpfcF+3e25r8N51RJ8PT0tOhILzAG+IkKhUzCpdhemAdI973hMLfEKwKpPwmtXfT5GjZ6ZTF8OJaE01FSPrkp3xdl5lyXUhuFVxANbLRA3EAVIPc55nuKVYq1pbFreCXdybzRhgs8DHyvBzn/mT+pjzGQZ79Wr7GuQ6qByoy3//dZotcX+M7Z1dd0BTdJKBXN1WtW9ZuRP9JpKcgqZP9AGuMFeziD8ZWzBTjc43B58+OACu6UodlQc5qq78aSok7cSAVYdV/Mgh1crrMUk738Ah5FOF9JN1xq7W70iBnt7KQEp2Jrh0F0fPS8VLNdwLzFLoXczGdkojTgbWdqGD+UhN9TQcjbUVk3T/xaKJBpcrSgNstyyDIE=
+  app: eseteam6
+  api_key:
+    secure: k9NPwaK1hhi7KNp+RgHga4PlSvtN/jwGjia4mJNoarRMaN2uobXNoWw2hUBFa/RP2jgTJrTKgOuv7cYijHsJBSJP43DzV1ZmcX0YB4Wgc10yKhDP7Kch0TjQI21IyAdKRQLTaLbh6m5/hX2jg2l9VO5ss29gKL/uFilhATeWGykI9j2SrS1Er03GzAH0Toa3gjjByowkSZABiCjSiBKmNmpsiOjX826xpO/6rIpYhwCMsDhGyKkRlb0bGk9LiJ1UGzRH3/JJx10DubTjrNkZDirSZX+HyASz6S9WtmEp9gSqdC6mmIbBTOuaDDd+ifksFkOLaz3cC9mQa2TwS6Yy6DvG+eKAwnNwg3yNkn/TR+EwTmxl4FzoYiNIKx9bsBaOd8cp60WFWR/XDT/c51sVXIVvHwBqusEUaa8YC/m/XCEuUrndyI/rlPHINhVLttiX9inwPVR4K8Mp4VV+mkD55lk/1LD9eiYxbCeiY0/d4WNmBj/AvegWWFIE1iCaKfQ7XAx1Q5apqM4p7RgPmo0aKP7igCtZzUlJ6iwurRINx4nKuZiUX9avCAj/bOY8oW5YG0iVssqn4HcJSMndyoceJoGK5n+n+mf4buIu2rN5YvVOT/soECTlJzC15Q8Te+pKNZAlXRZtXUg9ZEZuqfXI8Fh1ZMqJ+sYxbN/uic7WJfo=
+
